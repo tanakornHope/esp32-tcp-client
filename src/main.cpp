@@ -14,7 +14,8 @@ void setup()
   delay(10);
 
   // We start by connecting to a WiFi network
-  WiFiMulti.addAP("Orbi The Gentry", "Virus@coth");
+  // WiFiMulti.addAP("Orbi The Gentry", "Virus@coth");
+  WiFiMulti.addAP("Hope's Hotspot", "0813556103");
 
   Serial.println();
   Serial.println();
@@ -31,8 +32,8 @@ void setup()
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
 
-  const uint16_t port = 7070;
-  const char *host = "192.168.2.246"; // ip or dns
+  const uint16_t port = 43000;
+  const char *host = "52.163.210.190"; // ip or dns
 
   Serial.print("Connecting to ");
   Serial.println(host);
@@ -52,13 +53,13 @@ void setup()
 void loop()
 {
   // This will send a request to the server
-  //uncomment this line to send an arbitrary string to the server
-  //uncomment this line to send a basic document request to the server
+  // uncomment this line to send an arbitrary string to the server
+  // uncomment this line to send a basic document request to the server
   // client.print("GET /index.html HTTP/1.1\n\n");
 
   int maxloops = 0;
 
-  //wait for the server's reply to become available
+  // wait for the server's reply to become available
   /* while (!client.available() && maxloops < 1000)
   {
     maxloops++;
@@ -66,7 +67,7 @@ void loop()
   } */
   if (client.available() > 0)
   {
-    //read back one line from the server
+    // read back one line from the server
     incommingCount++;
     String line = client.readStringUntil('\r');
     Serial.printf("%s\n", line.c_str());
